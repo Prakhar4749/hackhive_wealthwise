@@ -26,6 +26,13 @@
 .font-pink{
     color: rgb(248, 81, 218);
 }
+.flex{
+    display: flex;
+}
+.flex-c{
+    display: flex;
+    flex-direction: column;
+}
 
 
 
@@ -40,6 +47,6 @@
     border: 0;
   }
   input{
-    font-size: 14px;
+    font-size: 12px;
     width: 80%;
   }
