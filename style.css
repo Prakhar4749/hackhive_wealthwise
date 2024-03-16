@@ -1,0 +1,45 @@
+/* utilities */
+
+
+.bg-black {
+    background-color: black;
+}
+.bg-dark-grey {
+    background-color: #2B2B2B;
+}
+
+.font-white{
+    color: white;
+}
+.font-black{
+    color: black;
+}
+.font-blue{
+    color: rgb(36, 36, 124);
+}
+.font-orange{
+    color: #f98e40;
+}
+.font-red{
+    color: red;
+}
+.font-pink{
+    color: rgb(248, 81, 218);
+}
+
+
+
+/* navbar  */
+.searchbar{
+    width: 40%;
+}
+
+
+  input:focus {
+    outline: 0;
+    border: 0;
+  }
+  input{
+    font-size: 14px;
+    width: 80%;
+  }
