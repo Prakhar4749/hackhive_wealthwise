@@ -21,10 +21,10 @@
 </head>
 
 <body>
-    <header class=" w-100 navbar bg_black flex ">
+    <header class=" w-100 navbar bg_black flex px-5 py-3 ">
 
-        <div class="flex align-items-center icon ms-4 me-3"><img src="./images/logo.png" class="me-1" width="30px">
-            <p class="font-purple fw-bold text-uppercase m-1"> Wealthwise</p>
+        <div class="flex align-items-center icon ms-5 me-3"><img src="./images/logo.png" class="me-1" width="30px">
+            <p class="font-purple fs-3 fw-bold text-uppercase m-1"> Wealthwi$e</p>
         </div>
         <div class=" m-1 p-2  bg-dark-grey flex align-items-center rounded searchbar ">
             <img src="./images/search.png" alt="" width="15px" class="invart me-2 ">
@@ -32,22 +32,24 @@
                 placeholder="Search stocks, mutual fundss, smallcases, ETFs etc.">
 
         </div>
-        <div class="flex align-items-center icon"><img src="./images/portfolio.png" alt="" width="20px"
+        <a href="portfolio.html" style="text-decoration: none;">
+            <div class="flex align-items-center icon"><img src="./images/portfolio.png" alt="" width="20px"
                 class="invart me-1">
-            <p class="font-white m-1 "> Portfolio</p>
-        </div>
+                <p class="font-white fs-4 m-1"> Portfolio</p>
+            </div>
+        </a>
 
         <div class="flex align-items-center icon"><img src="./images/mf.png" alt="" width="20px" class="invart me-1">
-            <p class="font-white m-1"> Mutual funds</p>
+            <p class="font-white fs-4 m-1"> Mutual funds</p>
         </div>
 
-        <div class="flex align-items-center icon"><img src="./images/forcast.png" alt="" width="30px" class="invart">
-            <p class="font-white m-1"> Forcast</p>
+        <div class="flex align-items-center icon"><img src="./images/forcast.png" alt="" width="20px" class="invart">
+            <p class="font-white fs-4 m-1"> Forcast</p>
         </div>
 
 
 
-        <button type="button" class=" rounded bg-purple font-white px-3 me-4 flex  align-items-center">
+        <button type="button" class=" rounded bg-purple font-white px-3 me-5 flex  align-items-center">
             <img src="./images/login.png" alt="" width="18px" class=" invart me-1">
             <p class="flex my-1 font-white">Login</p>
         </button>
@@ -56,16 +58,253 @@
 
     </header>
     <div class="hero mt-0 flex justify-content-center">
-        <div class="container flex">
+        <div class="container flex-c">
 
             <div class="my-5">
                 <p class="font-white my-0 font-size-1 "> Invest</p>
                 <p class="font-white my-0 font-size-1 "> Wisely with</p>
-                <p class="font-purple my-0 font-size-1 "> WEALTHWISE!</p>
+                <p class="font-purple my-0 font-size-1  "> WEALTHWI$E!</p>
+            </div>
+            <div class=" font-white fs-3 ibm">
+                Discover how mutual funds can grow your money smartly and securely. Insights, predictions, and recommendations await!
             </div>
         </div>
 
     </div>
+    
+    <div class="container flex-c my-5 pb-5">
+        <p class="fs-1 mb-5 ibm"> Mutual Funds Collections</p>
+        <div class="flex justify-content-between">
+            <div class="flex-c align-items-center width-20">
+                <img src="./images/sip.png" class="" alt="..." width="80px">
+                  <p class="
+                   fs-5 my-2 ibm">High Return</p>
+              </div>
+            <div class="flex-c align-items-center width-20">
+                <img src="./images/sip.png" class="" alt="..." width="80px">
+                  <p class="
+                   fs-5 my-2 ibm">SIP with 500</p>
+              </div>
+            <div class="flex-c align-items-center width-20">
+                <img src="./images/tex.png" class="" alt="..." width="80px">
+                  <p class="
+                   fs-5 my-2 ibm">Tax Saving</p>
+              </div>
+            <div class="flex-c align-items-center width-20">
+                <img src="./images/small.png" class="" alt="..." width="80px">
+                  <p class="
+                   fs-5 my-2 ibm">Euity</p>
+              </div>
+            <div class="flex-c align-items-center width-20">
+                <img src="./images/mid.png" class="" alt="..." width="80px">
+                  <p class="
+                   fs-5 my-2 ibm">Depth</p>
+              </div>
+            <div class="flex-c align-items-center width-20">
+                <img src="./images/large.png" class="" alt="..." width="80px">
+                  <p class="
+                   fs-5 my-2 ibm">Hybrid</p>
+              </div>
+        </div>
+
+        
+    </div>
+
+    
+
+    <div class="container flex-c my-5">
+        <p class="fs-1 mb-5 ibm">Top Performing Mutual Funds </p>
+
+        <div class="flex">
+            <span class="pill-btn fw-medium rounded-pill text-align-center mx-2 fs-5 pill-btn-default " onclick="one()">1 Year</span>
+            <span class="pill-btn fw-medium rounded-pill text-align-center mx-2 fs-5 " onclick="three()">3 Year</span>
+            <span class="pill-btn fw-medium rounded-pill text-align-center mx-2 fs-5 " onclick="five()">5 Year</span>
+        </div>
+
+
+        <div id="one-year" class="flex mt-5 justify-content-between w-75">
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           
+        </div>
+        <div id="three-year" class="flex mt-5 justify-content-between w-75 d-none">
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           
+        </div>
+
+
+        <div id="five-year" class="flex mt-5 justify-content-between w-75 d-none">
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           <div class="flex-c rounded border width-30">
+                <img src="./images/forcast.png" alt="" width="50px">
+                <p class="fw-medium my-1 fs-5">text</p>
+                <p class="fw-medium mt-4 mb-0 fs-5 font-green"> 50%</p>
+                <p class=" my-0 fs-7">Eyuity   5 <i class="fa-solid fa-star" style="color: #B197FC;"></i></p>
+            </div> 
+           
+        </div>
+
+        
+    </div>
+
+
+    <!-- fotter  -->
+    <footer class="bg-black py-5">
+
+    
+    <div class="footer">
+        <div class="footer__addr ">
+          <h1 class="footer__logo">Wealthwise</h1>
+              
+          <h2>Contact</h2>
+          
+          <address>
+            5534 Somewhere In. The World 22193-10212<br>
+                
+            <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+          </address>
+        </div>
+        
+        <ul class="footer__nav">
+          <li class="nav__item">
+            <h2 class="nav__title">Media</h2>
+      
+            <ul class="nav__ul">
+              <li>
+                <a href="#">Online</a>
+              </li>
+      
+              <li>
+                <a href="#">Print</a>
+              </li>
+                  
+              <li>
+                <a href="#">Alternative Ads</a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="nav__item nav__item--extra">
+            <h2 class="nav__title">Technology</h2>
+            
+            <ul class="nav__ul nav__ul--extra">
+              <li>
+                <a href="#">Hardware Design</a>
+              </li>
+              
+              <li>
+                <a href="#">Software Design</a>
+              </li>
+              
+              <li>
+                <a href="#">Digital Signage</a>
+              </li>
+              
+              <li>
+                <a href="#">Automation</a>
+              </li>
+              
+              <li>
+                <a href="#">Artificial Intelligence</a>
+              </li>
+              
+              <li>
+                <a href="#">IoT</a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="nav__item">
+            <h2 class="nav__title">Legal</h2>
+            
+            <ul class="nav__ul">
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              
+              <li>
+                <a href="#">Terms of Use</a>
+              </li>
+              
+              <li>
+                <a href="#">Sitemap</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        
+        <div class="legal">
+          <p>&copy; 2019 Something. All rights reserved.</p>
+          
+          <div class="legal__links">
+            <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
+          </div>
+        </div>
+    </div>
+    </footer>
+
 
 
 
