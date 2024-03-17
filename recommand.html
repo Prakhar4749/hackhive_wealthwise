@@ -42,11 +42,10 @@
         <div class="flex align-items-center icon"><img src="./images/mf.png" alt="" width="20px" class="invart me-1">
             <p class="font-white fs-4 m-1"> Mutual funds</p>
         </div>
-        <a href="portfolio.html" style="text-decoration: none;">
+
         <div class="flex align-items-center icon"><img src="./images/forcast.png" alt="" width="20px" class="invart">
             <p class="font-white fs-4 m-1"> Recommendation</p>
         </div>
-        </a>
 
 
 
@@ -59,10 +58,46 @@
 
     </header>
 
-    <div class="container flex border rounded h-75 my-5">
+    <div class=" container flex  justify-content-evenly  border rounded my-5 py-3">
+        <div class="flex">
+            <form id="msform">
+                <!-- progressbar -->
+               
+                <!-- fieldsets -->
+                <fieldset>
+                  <h2 class="fs-title">Get Recommendations with our experts </h2>
+                  <p class="text-start fw-normal fs-5 ">Tenuar</p>
+                  <input type="number" id="tenuar" min="0" name="tenuar" placeholder="years" />
+                  <p class="text-start fw-normal fs-5 ">Amount investing</p>
+                  <input type="number" id="amount" min="500" name="currency-field" id="currency-field" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="$1,000,000.00">
+                  
+                  <input type="button" name="next" class="next action-button" value="Next"
+                  onclick="sendData()" />
+                </fieldset>
         
-        
-        
+              </form>
+
+        </div>
+        <div class="result flex mt-5" style=" width: 50%; ">
+            <table id="result" >
+                <table class="container">
+                    <thead>
+                      <tr>
+                        <th><h1>S no.</h1></th>
+                        <th><h1>Mutual Funds</h1></th>
+                        <th><h1>Category</h1></th>
+                        <th><h1>percentage wightage</h1></th>
+                        <th><h1>1 Year forcast %</h1></th>
+                      </tr>
+                    </thead>
+                    <tbody id="">
+                      
+                        
+                    </tbody>
+                  </table>
+              </table>
+        </div>
+
     </div>
 
     
