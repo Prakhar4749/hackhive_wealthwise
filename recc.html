@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recommendation Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    input[type="submit"],
+    button {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover,
+    button:hover {
+        background-color: #45a049;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li.scheme {
+        cursor: pointer;
+        padding: 5px;
+        margin: 5px 0;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+    }
+    /* Popup box styles */
+    .popup {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .popup-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+  
+  <header class=" w-100 navbar bg_black flex px-5 py-3 ">
+
+    <a href="index.html" style="text-decoration: none;">
+    <div class="flex align-items-center icon ms-5 me-3"><img src="./images/logo.png" class="me-1" width="30px">
+        <p class="font-purple fs-3 fw-bold text-uppercase m-1"> Wealthwi$e</p>
+    </div>
+</a>
+    <div class=" m-1 p-2  bg-dark-grey flex align-items-center rounded searchbar ">
+        <img src="./images/search.png" alt="" width="15px" class="invart me-2 ">
+        <input type="text" class="rounded border-0 bg-dark-grey font-white"
+            placeholder="Search stocks, mutual fundss, smallcases, ETFs etc.">
+
+    </div>
+    <a href="#" style="text-decoration: none;">
+        <div class="flex align-items-center icon"><img src="./images/portfolio.png" alt="" width="20px"
+            class="invart me-1">
+            <p class="font-white fs-4 m-1"> Portfolio</p>
+        </div>
+    </a>
+    <a href="#" style="text-decoration: none;">
+    <div class="flex align-items-center icon"><img src="./images/mf.png" alt="" width="20px" class="invart me-1">
+        <p class="font-white fs-4 m-1"> Mutual funds</p>
+    </div>
+    </a>
+
+    <a href="recc.html" style="text-decoration: none;">
+    <div class="flex align-items-center icon"><img src="./images/forcast.png" alt="" width="20px" class="invart">
+        <p class="font-white fs-4 m-1"> Recommendation</p>
+    </div>
+    </a>
+
+
+
+    
+
+
+
+</header>
+
+<form id="recommendationForm" onsubmit="sendRecommendation(event)">
+    <label for="tenure">Tenure (in months):</label>
+    <input type="number" id="tenure" name="tenure" required>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" required>
+    <input type="submit" value="Submit">
+</form>
+
+<div id="response"></div>
+
+<button onclick="getForecast()">Forecast</button>
+
+<!-- Popup box -->
+<div id="schemeInfoPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div id="schemeInfoContent"></div>
+    </div>
+</div>
+
+
+
+    <!-- fotter  -->
+    <footer class="bg-black mt-5 py-5">
+
+    
+      <div class="footer">
+          <div class="footer__addr ">
+            <h1 class="footer__logo">Wealthwise</h1>
+                
+            <h2>Contact</h2>
+            
+            <address>
+              5534 Somewhere In. The World 22193-10212<br>
+                  
+              <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+            </address>
+          </div>
+          
+          <ul class="footer__nav">
+            <li class="nav__item">
+              <h2 class="nav__title">Media</h2>
+        
+              <ul class="nav__ul">
+                <li>
+                  <a href="#">Online</a>
+                </li>
+        
+                <li>
+                  <a href="#">Print</a>
+                </li>
+                    
+                <li>
+                  <a href="#">Alternative Ads</a>
+                </li>
+              </ul>
+            </li>
+            
+            <li class="nav__item nav__item--extra">
+              <h2 class="nav__title">Technology</h2>
+              
+              <ul class="nav__ul nav__ul--extra">
+                <li>
+                  <a href="#">Hardware Design</a>
+                </li>
+                
+                <li>
+                  <a href="#">Software Design</a>
+                </li>
+                
+                <li>
+                  <a href="#">Digital Signage</a>
+                </li>
+                
+                <li>
+                  <a href="#">Automation</a>
+                </li>
+                
+                <li>
+                  <a href="#">Artificial Intelligence</a>
+                </li>
+                
+                <li>
+                  <a href="#">IoT</a>
+                </li>
+              </ul>
+            </li>
+            
+            <li class="nav__item">
+              <h2 class="nav__title">Legal</h2>
+              
+              <ul class="nav__ul">
+                <li>
+                  <a href="#">Privacy Policy</a>
+                </li>
+                
+                <li>
+                  <a href="#">Terms of Use</a>
+                </li>
+                
+                <li>
+                  <a href="#">Sitemap</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          
+          <div class="legal">
+            <p>&copy; 2019 Something. All rights reserved.</p>
+            
+            <div class="legal__links">
+              <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
+            </div>
+          </div>
+      </div>
+      </footer>
+
+<script>
+    function sendRecommendation(event) {
+        event.preventDefault();
+
+        var form = document.getElementById("recommendationForm");
+        var tenure = form.elements["tenure"].value;
+        var amount = form.elements["amount"].value;
+
+        var data = {
+            "tenure": parseInt(tenure),
+            "amount": parseFloat(amount)
+        };
+
+        fetch("http://65.2.161.64/recommend", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            var responseDiv = document.getElementById("response");
+            responseDiv.innerHTML = "<h2>Recommendation</h2>";
+            
+            // Create an unordered list to hold the recommendations
+            var ul = document.createElement("ul");
+            
+            // Iterate over the received data and create list items for each scheme
+            data.forEach(scheme => {
+                var li = document.createElement("li");
+                li.className = "scheme";
+                li.textContent = scheme.scheme_name + " - " + scheme.allocation_percentage.toFixed(2) + "%";
+                li.addEventListener("click", function() {
+                    sendSchemeInfo(scheme.scheme_name);
+                });
+                ul.appendChild(li);
+            });
+
+            responseDiv.appendChild(ul);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            var responseDiv = document.getElementById("response");
+            responseDiv.innerHTML = "<p>An error occurred. Please try again.</p>";
+        });
+    }
+
+    function getForecast() {
+        var form = document.getElementById("recommendationForm");
+        var tenure = form.elements["tenure"].value;
+        var amount = form.elements["amount"].value;
+
+        var data = {
+            "tenure": parseInt(tenure),
+            "amount": parseFloat(amount)
+        };
+
+        fetch("http://65.2.121.39/get_forecasts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            var responseDiv = document.getElementById("response");
+            responseDiv.innerHTML = "<h2>Forecast</h2>";
+            
+            // Create a div to hold the forecasted returns
+            var forecastDiv = document.createElement("div");
+            
+            // Iterate over the received data and create elements for each scheme
+            Object.keys(data).forEach(schemeName => {
+                var schemeData = data[schemeName];
+                var schemeElement = document.createElement("div");
+
+                if (schemeData === "Error: 404") {
+                    schemeElement.textContent = schemeName + " - Error: 404";
+                } else {
+                    var returns = schemeData.forecasted_returns;
+                    var returnsText = returns.length > 0 ? returns[0].toFixed(2) + "%" : "N/A";
+                    schemeElement.textContent = schemeName + " - Forecasted Returns: " + returnsText;
+                }
+
+                forecastDiv.appendChild(schemeElement);
+            });
+
+            responseDiv.appendChild(forecastDiv);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            var responseDiv = document.getElementById("response");
+            responseDiv.innerHTML = "<p>An error occurred. Please try again.</p>";
+        });
+    }
+
+    function sendSchemeInfo(schemeName) {
+        var data = {
+            "scheme_name": schemeName
+        };
+
+        fetch("http://65.0.130.80/search", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+            var matchedRows = data.matched_rows;
+            if (matchedRows.length > 0) {
+                var schemeInfo = matchedRows[0];
+                var popupContent = "<h2>Scheme Information</h2>";
+                popupContent += "<table>";
+                Object.keys(schemeInfo).forEach(key => {
+                    popupContent += "<tr>";
+                    popupContent += "<td><strong>" + key + "</strong></td>";
+                    popupContent += "<td>" + schemeInfo[key] + "</td>";
+                    popupContent += "</tr>";
+                });
+                popupContent += "</table>";
+                // Display the popup box
+                var schemeInfoPopup = document.getElementById("schemeInfoPopup");
+                var schemeInfoContent = document.getElementById("schemeInfoContent");
+                schemeInfoContent.innerHTML = popupContent;
+                schemeInfoPopup.style.display = "block";
+            } else {
+                alert("No information available for the selected scheme.");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("An error occurred while fetching scheme information.");
+        });
+    }
+
+    function closePopup() {
+        var schemeInfoPopup = document.getElementById("schemeInfoPopup");
+        schemeInfoPopup.style.display = "none";
+    }
+</script>
+
+</body>
+</html>
